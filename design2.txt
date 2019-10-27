@@ -1,0 +1,139 @@
+# File:    design2.txt
+# Author:  Steven Ryan
+# Date:    11/1/18
+# Section: 34
+# E-mail:  sryan6@umbc.edu
+# Description:
+# Plan for a connect four game
+
+##################################
+#### DO NOT TOUCH THESE LINES ####
+from random import randint, seed #
+seed(100)                        #
+##################################
+
+#Constants
+yes = "y"
+no = "n"
+underscore = "_"
+x = "x"
+o = "o"
+
+ONE = 1
+TWO = 2
+
+MIN_HEIGHT = 5
+MIN_WIDTH = 5
+
+# printBoard(board) prints a connect four board from a list
+# 
+# Input:    takes in a list to print
+# Output:   none, it is a print function
+
+# checkWin(board) determines if there is four in a row somewhere in the code.
+# 
+# Input:    takes in the updated list
+# Output:   a boolean, True if a win condition is met and False if not.
+
+# placeDisk(board, player, choice) if the player is 1, the corresponding _ in
+#           the list is replaced with an x and an o for player 2. Puts the
+#           choice at the bottom-most open spot
+# 
+# Input:    the list that represents the board, the choice column to replace
+#           the _ in the list, and the player to tell what to replace the _
+#           with.
+# Output:   returns the updated list of values
+
+def main():
+    playAgain = yes
+    
+    while(playAgain == yes):
+        player = two
+        winFlag == False
+        TieFlag == False
+        pieceCounter = 0
+        
+        #width = int(input("Enter a width"))
+        #while(width < MIN_WIDTH):
+            #width = int(input("You must give a number higher than 4"))
+        #height = int(input("Enter a height"))
+        #while(height < MIN_HEIGHT):
+            #height = int(input("You must give a number higher than 4"))
+        tieNumber = height * width
+
+        #for i in range(0, len(height)):
+            #for i in range(0, len(width)):
+                #append to list board all the underscores
+        #ask user for either 1 or 2 player mode
+        printBoard()
+        #if 1 player mode was chosen
+            #while(winFlag == False and TieFlag == False):
+                #if(player == ONE):
+                    player = TWO
+                #elif(player == TWO):
+                    player = ONE
+                printBoard()
+                #if(player == ONE):
+                    #choice = int(input("Enter a column (1 - ", width,"): "))
+                    #while(choice <= ONE and choice >= width):
+                        #choice = int(input("Enter a valid column (1 - ",\
+                                            #width,"): "))
+
+                    #updates the board with the column placed
+                    board = placeDisk(board, player, choice)
+                    pieceCounter += 1
+                    
+                    #checks to see if a win or tie condition has been met
+                    winFlag = checkWin(board)
+                    #if(pieceCounter >= tieNumber and winFlag == False):
+                        TieFlag = True
+                    
+                #elif(player == TWO):
+                    #choice = randint(ONE, width)
+                    #updates the board with the column placed
+                    board = placeDisk(board, player, choice)
+                    pieceCounter += 1
+                    
+                    #checks to see if a win or tie condition has been met
+                    winFlag = checkWin(board)
+                    #if(pieceCounter >= tieNumber and winFlag == False):
+                        TieFlag = True
+                    
+            #if(winFlag != False):
+                #if(player == ONE):
+                    #print("player", player, "wins")
+                #elif(player == TWO):
+                    #print("Computer wins")
+            #elif(TieFlag != False):
+                #print("It was a Tie!")
+
+        #elif 2 player mode was chosen
+            #while(winFlag == False and TieFlag == False):
+                #if(player == ONE):
+                    player = TWO
+                #elif(player == TWO):
+                    player = ONE
+                printBoard()
+                #choice = int(input("Enter a column (1 - ", width,"): "))
+                #while(choice <= ONE and choice >= width):
+                    #choice = int(input("Enter a valid column (1 - ",\
+                                            #width,"): "))
+
+                #updates the board with the column placed
+                board = placeDisk(board, player, choice)
+                pieceCounter += 1
+                    
+                #checks to see if a win or tie condition has been met
+                winFlag = checkWin(board)
+                #if(pieceCounter >= tieNumber and winFlag == False):
+                        TieFlag = True
+                        
+            #if(winFlag != False):
+                #print("player", player, "wins")
+            #elif(TieFlag != False):
+                #print("It was a tie!")
+
+        #asks if the player wants to play again
+        #playAgain = input("play again? (y/n)")
+        #while(playAgain != yes and playAgain != no):
+              #playAgain = input("please enter a 'y' or a 'n'")
